@@ -1,6 +1,7 @@
 """remotetypes server application."""
 
 import logging
+import sys
 
 import Ice
 
@@ -29,3 +30,11 @@ class Server(Ice.Application):
         self.shutdownOnInterrupt()
         self.communicator().waitForShutdown()
         return 0
+
+def main():
+    """Handle the icedrive-authentication program."""
+    app = Server()
+    return app.main(sys.argv)
+
+if __name__ == "__main__":
+    main()
