@@ -24,6 +24,9 @@ class Server(Ice.Application):
         factory_servant = Factory()
         adapter = self.communicator().createObjectAdapter("remotetypes")
         proxy = adapter.add(factory_servant, self.communicator().stringToIdentity("factory"))
+        with open("proxy.txt","w") as archivo:
+            archivo.write(proxy)
+            
         self.logger.info('Proxy: "%s"', proxy)
 
         adapter.activate()
