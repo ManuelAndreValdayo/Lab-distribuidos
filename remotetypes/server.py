@@ -27,7 +27,7 @@ class Server(Ice.Application):
         with open("proxy.txt","w") as archivo:
             archivo.write(proxy)
             
-        self.logger.info('Proxy: "%s"', proxy)
+        self.logger.info('Proxyyy: "%s"', proxy)
 
         adapter.activate()
         self.shutdownOnInterrupt()
